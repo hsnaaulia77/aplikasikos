@@ -11,9 +11,6 @@ $routes->get('register', 'Auth::register');
 $routes->get('forgot-password', 'Auth::forgotPassword');
 $routes->get('logout', 'Auth::logout');
 $routes->get('dashboard', 'Dashboard::index');
-$routes->get('dashboard/admin', 'Dashboard::admin');
-$routes->get('dashboard/user', 'Dashboard::user');
-$routes->get('admin', 'Admin::index');
 $routes->group('admin', function($routes) {
     $routes->get('kamar', 'Admin\Kamar::index');
     $routes->get('kamar/create', 'Admin\Kamar::create');
@@ -22,4 +19,11 @@ $routes->group('admin', function($routes) {
     $routes->post('kamar/(:num)/update', 'Admin\Kamar::update/$1');
     $routes->get('kamar/(:num)/delete', 'Admin\Kamar::delete/$1');
     $routes->get('kamar/(:num)', 'Admin\Kamar::detail/$1');
+    $routes->get('user', 'Admin\User::index');
+    $routes->get('user/create', 'Admin\User::create');
+    $routes->post('user/store', 'Admin\User::store');
+    $routes->get('user/(:num)/edit', 'Admin\User::edit/$1');
+    $routes->post('user/(:num)/update', 'Admin\User::update/$1');
+    $routes->get('user/(:num)/delete', 'Admin\User::delete/$1');
+    $routes->get('user/(:num)', 'Admin\User::detail/$1');
 });
