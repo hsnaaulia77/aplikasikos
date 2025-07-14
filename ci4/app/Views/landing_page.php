@@ -23,6 +23,55 @@
             font-family: 'Nunito', 'Quicksand', Arial, sans-serif;
             color: var(--coklat-tua);
         }
+        .navbar-cozy {
+            background: transparent;
+            padding: 1.2rem 0 0.5rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar-brand-cozy {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
+        .navbar-brand-cozy img {
+            height: 40px;
+            border-radius: 12px;
+        }
+        .navbar-brand-cozy span {
+            font-family: 'Quicksand',sans-serif;
+            font-size: 1.3rem;
+            color: var(--coklat-tua);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .navbar-cozy .btn-cozy {
+            background: var(--coklat-muda);
+            color: #fff;
+            border-radius: 22px;
+            font-weight: 700;
+            border: none;
+            padding: 0.5rem 1.3rem;
+            transition: background 0.2s;
+        }
+        .navbar-cozy .btn-cozy:hover {
+            background: #b49c85;
+            color: #fff;
+        }
+        .navbar-cozy .btn-outline-cozy {
+            background: transparent;
+            color: var(--coklat-tua);
+            border: 2px solid var(--coklat-muda);
+            border-radius: 22px;
+            font-weight: 700;
+            padding: 0.5rem 1.3rem;
+            transition: background 0.2s, color 0.2s;
+        }
+        .navbar-cozy .btn-outline-cozy:hover {
+            background: var(--coklat-muda);
+            color: #fff;
+        }
         .hero {
             background: linear-gradient(120deg, var(--cream) 60%, var(--hijau-pastel) 100%);
             color: var(--coklat-tua);
@@ -190,9 +239,40 @@
                 flex-direction: column;
             }
         }
+        @media (max-width: 768px) {
+            .navbar-cozy {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.7rem;
+            }
+            .navbar-brand-cozy {
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Navbar dengan Logo, Tombol, dan Dropdown -->
+    <nav class="navbar-cozy container">
+        <div class="navbar-brand-cozy">
+            <img src="/images/logo_kos.png" alt="Logo Kos">
+            <span>Kos Harmoni</span>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+            <a href="/login" class="btn btn-outline-cozy">Login</a>
+            <a href="/register" class="btn btn-cozy">Register</a>
+            <div class="dropdown d-inline">
+                <button class="btn btn-cozy dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Menu
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/dashboard">Dashboard</a></li>
+                    <li><a class="dropdown-item" href="/profile">Profil</a></li>
+                    <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <!-- Hero Section -->
     <section class="hero text-center">
         <div class="container">
@@ -200,7 +280,9 @@
                 <?= esc($nama_kos) ?>
             </h1>
             <p class="lead mb-2" style="color:var(--coklat-tua); font-size:1.3rem;">Cozy Stay – Hangat & Ramah</p>
-            <p class="mb-4" style="color:var(--coklat-tua); font-size:1.1rem;"><?= esc($tagline) ?></p>
+            <p class="mb-4" style="color:var(--coklat-tua); font-size:1.1rem;">
+                <?= esc($tagline) ?>
+            </p>
             <a href="#form-booking" class="btn btn-custom btn-lg">Lihat Kamar / Booking</a>
         </div>
     </section>
