@@ -37,9 +37,10 @@
     </div>
 </div>
 
-<div class="mt-5 text-center">
-    <a href="<?= site_url('admin/kamar') ?>" class="btn btn-primary btn-lg me-2">Manajemen Kamar</a>
-    <a href="<?= site_url('admin/user') ?>" class="btn btn-info btn-lg">Manajemen User</a>
+<div class="mt-4 text-center">
+    <a href="<?= site_url('admin/kamar') ?>" class="btn btn-primary btn-lg me-2 rounded-pill">Manajemen Kamar</a>
+    <a href="<?= site_url('admin/user') ?>" class="btn btn-info btn-lg me-2 rounded-pill">Manajemen User</a>
+    <a href="<?= site_url('admin/penyewa') ?>" class="btn btn-success btn-lg me-2 rounded-pill">Manajemen Penyewa</a>
 </div>
 
 <?= $this->endSection() ?> 

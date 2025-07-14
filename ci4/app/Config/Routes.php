@@ -26,4 +26,13 @@ $routes->group('admin', function($routes) {
     $routes->post('user/(:num)/update', 'Admin\User::update/$1');
     $routes->get('user/(:num)/delete', 'Admin\User::delete/$1');
     $routes->get('user/(:num)', 'Admin\User::detail/$1');
+    $routes->get('penyewa', 'Admin\Penyewa::index');
+    $routes->get('penyewa/create', 'Admin\Penyewa::create');
+    $routes->post('penyewa/store', 'Admin\Penyewa::store');
+    $routes->get('penyewa/(:num)/edit', 'Admin\Penyewa::edit/$1');
+    $routes->post('penyewa/(:num)/update', 'Admin\Penyewa::update/$1');
+    $routes->get('penyewa/(:num)/delete', 'Admin\Penyewa::delete/$1');
+    $routes->get('penyewa/(:num)', 'Admin\Penyewa::detail/$1');
+    $routes->get('penyewa/(:num)/riwayat/create', 'Admin\Penyewaan::create/$1');
+    $routes->post('penyewa/(:num)/riwayat/store', 'Admin\Penyewaan::store/$1');
 });

@@ -75,6 +75,7 @@
                 <a href="<?= base_url('dashboard') ?>" class="btn btn-light btn-sm me-2">Dashboard</a>
                 <a href="<?= base_url('admin/kamar') ?>" class="btn btn-light btn-sm me-2">Kamar</a>
                 <a href="<?= base_url('admin/user') ?>" class="btn btn-light btn-sm me-2">User</a>
+                <a href="<?= base_url('admin/penyewa') ?>" class="btn btn-light btn-sm me-2">Penyewa</a>
                 <a href="<?= base_url('logout') ?>" class="btn btn-danger btn-sm">Logout</a>
             </div>
         </div>
