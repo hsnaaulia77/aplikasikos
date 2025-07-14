@@ -67,7 +67,7 @@
                     </div>
                 <?php endif; ?>
                 <h3 class="mb-4 text-center">Login Penyewa</h3>
-                <form method="post" action="/login">
+                <form method="post" action="<?= site_url('login') ?>">
                     <div class="mb-3">
                         <label>Email</label>
                         <input type="email" class="form-control" name="email" required>
@@ -79,9 +79,9 @@
                     <button type="submit" class="btn btn-primary w-100">Login</button>
                 </form>
                 <div class="mt-3 text-center">
-                    <a href="/register">Belum punya akun? Daftar</a>
+                    <a href="<?= base_url('register') ?>">Belum punya akun? Daftar</a>
                     <br>
-                    <a href="/forgot-password">Lupa password?</a>
+                    <a href="<?= base_url('forgot-password') ?>">Lupa password?</a>
                 </div>
             </div>
         </div>

@@ -1,5 +1,7 @@
-// app/Filters/AdminFilter.php
+<?php
+
 namespace App\Filters;
+
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use CodeIgniter\Filters\FilterInterface;
@@ -12,5 +14,9 @@ class AdminFilter implements FilterInterface
             return redirect()->to('/login')->with('error', 'Akses hanya untuk admin.');
         }
     }
-    public function after(RequestInterface $request, ResponseInterface $response, $arguments = null) {}
+
+    public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)
+    {
+        // Do nothing
+    }
 }

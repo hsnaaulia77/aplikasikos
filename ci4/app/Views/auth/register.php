@@ -57,13 +57,13 @@
         <div class="col-md-5">
             <div class="card-soft">
                 <?= view('layouts/alert') ?>
-                <h3 class="mb-4 text-center">Daftar Penyewa</h3>
+                <h2>Daftar Sebagai <?= esc($role) ?></h2>
                 <?php if (isset($validation)): ?>
                     <div class="alert alert-danger">
                         <?= $validation->listErrors() ?>
                     </div>
                 <?php endif; ?>
-                <form method="post" action="/register">
+                <form action="<?= site_url('register/' . $role) ?>" method="post">
                     <div class="mb-3">
                         <label>Nama Lengkap</label>
                         <input type="text" class="form-control" name="nama" required>
@@ -83,7 +83,7 @@
                     <button type="submit" class="btn btn-success w-100">Daftar</button>
                 </form>
                 <div class="mt-3 text-center">
-                    <a href="/login">Sudah punya akun? Login</a>
+                    <a href="<?= base_url('login') ?>">Sudah punya akun? Login</a>
                 </div>
             </div>
         </div>

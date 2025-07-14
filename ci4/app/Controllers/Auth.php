@@ -33,8 +33,12 @@ class Auth extends BaseController
                     'user_role' => $user['role'],
                     'isLoggedIn' => true
                 ]);
-                // Redirect ke dashboard atau halaman utama
-                return redirect()->to('/');
+                // Redirect ke dashboard sesuai role
+                if ($user['role'] == 'admin') {
+                    return redirect()->to(base_url('dashboard/admin'));
+                } else {
+                    return redirect()->to(base_url('dashboard/user'));
+                }
             } else {
                 return view('auth/login', [
                     'error' => 'Email atau password salah.'
@@ -45,7 +49,7 @@ class Auth extends BaseController
         return view('auth/login');
     }
 
-    public function register()
+    public function register($role = 'user')
     {
         helper(['form']);
         $userModel = new UserModel();
@@ -60,7 +64,8 @@ class Auth extends BaseController
 
             if (!$this->validate($rules)) {
                 return view('auth/register', [
-                    'validation' => $this->validator
+                    'validation' => $this->validator,
+                    'role' => $role
                 ]);
             }
 
@@ -68,13 +73,13 @@ class Auth extends BaseController
                 'nama' => $this->request->getPost('nama'),
                 'email' => $this->request->getPost('email'),
                 'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
-                'role' => 'penyewa'
+                'role' => $role // simpan role sesuai URL
             ]);
 
-            return redirect()->to('/login')->with('success', 'Pendaftaran berhasil! Silakan login.');
+            return redirect()->to(base_url('login'))->with('success', 'Pendaftaran berhasil! Silakan login.');
         }
 
-        return view('auth/register');
+        return view('auth/register', ['role' => $role]);
     }
 
     public function forgotPassword()

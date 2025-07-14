@@ -259,7 +259,7 @@
             <span>Kos Harmoni</span>
         </div>
         <div class="d-flex align-items-center gap-2">
-            <a href="/login" class="btn btn-outline-cozy">Login</a>
+            <a href="<?= base_url('login') ?>" class="btn btn-outline-cozy">Login</a>
             <a href="/register" class="btn btn-cozy">Register</a>
             <div class="dropdown d-inline">
                 <button class="btn btn-cozy dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">

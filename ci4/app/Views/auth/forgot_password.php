@@ -66,7 +66,7 @@
                     <button type="submit" class="btn btn-primary w-100">Kirim Link Reset</button>
                 </form>
                 <div class="mt-3 text-center">
-                    <a href="/login">Kembali ke Login</a>
+                    <a href="<?= base_url('login') ?>">Kembali ke Login</a>
                 </div>
             </div>
         </div>
